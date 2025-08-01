@@ -1,4 +1,5 @@
 import express from 'express'
+import cors from 'cors'
 import  { PrismaClient }  from './generated/prisma/index.js'
 
 const prisma = new PrismaClient()
@@ -6,6 +7,7 @@ const prisma = new PrismaClient()
 //criando a variável "app" e colocando a biblioteca express dentro dela
 const app = express()
 app.use(express.json())
+app.use(cors())
 
 
 //Salvar dados do usuário
